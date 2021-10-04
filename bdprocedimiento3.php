@@ -29,6 +29,8 @@
                echo  '<br /><br />';
             }
 
+            //Count actua como un array.length
+
         ?>
     </body>
 </html>

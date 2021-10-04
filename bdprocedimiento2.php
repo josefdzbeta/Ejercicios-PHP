@@ -27,7 +27,7 @@
                 echo $fila['Nombre'];
                 echo $fila['Repite'];
             }
-
+            //imprime la informacion por campos 
         ?>
     </body>
 </html>

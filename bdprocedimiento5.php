@@ -12,20 +12,25 @@
             $usuario='root';
             $contraseña='';
             $basedatos='bdprocedimiento';
-
+            $numClase=$_POST['Id'];
 
             $conexion = mysqli_connect($servidorbd, $usuario, $contraseña, $basedatos);
 
-            $consulta='SELECT * FROM Alumnos';
-            
-            $resultado = mysqli_query($conexion, $consulta);
-            $fila = mysqli_fetch_array($resultado);
+            //$consulta='SELECT * FROM Alumnos';
+            $consulta='SELECT Id, Nombre, Repite FROM Alumnos WHERE Id=.$numClase';
 
-            foreach($fila as $indice =>$valor){
-                echo $fila.$valor;
+
+            $resultado = mysqli_query($conexion, $consulta);
+            
+            while($fila = mysqli_fetch_array($resultado)){
+               
+                echo 'Id Clase: '.$fila['Id'].'<br />';
+                echo 'Nombre: '.$fila['Nombre'].'<br />';
+                echo 'Repite '.$fila['Repite'].'<br />';
+
             }
 
-            //imprime dos veces el contenido porque imprime el indice numerico y el indice asociativo
+
         ?>
     </body>
 </html>
